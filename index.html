@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クマ出没マップ FAQ</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Noto Sans TC", "Noto Sans JP", sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.8;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .lang-buttons {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    .lang-buttons button {
+      margin: 0 0.5em;
+      padding: 0.5em 1.2em;
+      font-size: 1em;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
+    }
+    .lang-buttons button:hover {
+      background-color: #efefef;
+    }
+    .lang-section {
+      display: none;
+    }
+    .lang-section.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in;
+    }
+    li {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.2em;
+      margin-bottom: 1em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      list-style: none;
+    }
+    strong {
+      display: block;
+      margin-bottom: 0.5em;
+      font-size: 1.1em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2em;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      word-break: break-all;
+    }
+    th, td {
+      padding: 0.75em 1em;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f0f0f0;
+    }
+    td.url {
+      font-family: monospace;
+      font-size: 0.9em;
+      color: #555;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(lang).classList.add('active');
+    }
+    window.onload = function() {
+      switchLang('jp');
+    }
+  </script>
+</head>
+<body>
+
+  <h1>クマ出没マップ FAQ</h1>
+
+  <div class="lang-buttons">
+    <button onclick="switchLang('jp')">日本語</button>
+    <button onclick="switchLang('zh')">繁體中文</button>
+    <button onclick="switchLang('en')">English</button>
+  </div>
+
+  <!-- 日文 -->
+  <div id="jp" class="lang-section active">
+    <ul>
+      <li>
+        <strong>クマ出没マップは無料で使えますか？</strong>
+        <p>はい。ユーザーは無料でクマの出没・目撃情報を地図上で確認できます。</p>
+      </li>
+      <li>
+        <strong>どの地域の情報を確認できますか？</strong>
+        <p>日本全国のクマ出没・目撃情報をマップで確認できます。地域を選択して通知を受け取ることも可能です。</p>
+      </li>
+      <li>
+        <strong>投稿した出没情報はすぐに表示されますか？</strong>
+        <p>投稿内容は運営チームが確認後、問題がなければできるだけ早くマップに反映されます。</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 繁體中文 -->
+  <div id="zh" class="lang-section">
+    <ul>
+      <li>
+        <strong>熊出沒地圖可以免費使用嗎？</strong>
+        <p>是的。使用者可以免費在地圖上查看熊的出沒與目擊資訊。</p>
+      </li>
+      <li>
+        <strong>可以查看哪些地區的資訊？</strong>
+        <p>可以在地圖上查看日本全國的熊出沒與目擊資訊，也可以選擇特定地區來接收通知。</p>
+      </li>
+      <li>
+        <strong>我回報的出沒資訊會立即顯示嗎？</strong>
+        <p>回報內容會由營運團隊進行審核，若無問題，會盡快顯示在地圖上。</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 英文 -->
+  <div id="en" class="lang-section">
+    <ul>
+      <li>
+        <strong>Is the Bear Map free to use?</strong>
+        <p>Yes. Users can check bear sighting and appearance information on the map for free.</p>
+      </li>
+      <li>
+        <strong>Which areas does the app cover?</strong>
+        <p>You can view bear sightings and appearance information across all regions of Japan. You can also choose specific prefectures to receive alerts.</p>
+      </li>
+      <li>
+        <strong>Will my reported sightings appear immediately?</strong>
+        <p>All reports are reviewed by our team. If there are no issues, they will be displayed on the map as soon as possible.</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 資料來源 -->
+  <section id="sources">
+    <h2>データソース（資料來源）</h2>
+    <table>
+      <tr><th>都道府県</th><th>資料URL</th></tr>
+      <tr><td>北海道</td><td class="url">https://higumap.info/recent</td></tr>
+      <tr><td>青森県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?mid=13Nbo8EFxhx50lQsl4SptQctrnNU&ll=40.90085639272563%2C141.02053237782945&z=8</td></tr>
+      <tr><td>岩手県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?hl=ja&msa=0&ie=UTF8&ll=39.64700290831522%2C141.332321&spn=0.739605%2C1.156982&t=m&brcurrent=3%2C0x5f8590d0ed093a23%3A0x662c817ee87f406c%2C1&source=embed&mid=1Rzj7qui6pXmL02XzmsH_Zqf8Feg&z=10<br>https://www.google.com/maps/d/u/0/viewer?mid=1QnVCL8lSy4tc9bPEhAXTBsK6SQ0ztwc&ll=39.847689082719775%2C141.37882579281023&z=10</td></tr>
+      <tr><td>宮城県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?mid=1aZCXqs7vrAPEBhE4HkT3CwmlMdunP2Y&ll=38.38369647205532%2C140.85414165708124&z=8</td></tr>
+      <tr><td>秋田県</td><td class="url">https://kumadas.net/googlemap/?lat=39.71863176&lng=140.10234516&radius=1000&startdate=2025-10-28&enddate=2025-10-31&zoom_level=12</td></tr>
+      <tr><td>山形県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?mid=1N9E9rixBQwxB4TKQ2XsP32GLOi6w6qQ&ll=38.401711371328155%2C139.39355916046551&z=8</td></tr>
+      <tr><td>福島県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?mid=10gR9gJgiEA_Tso2E0jM-Q2sI41A3n_w&femb=1&ll=37.40133106456598%2C140.1579743&z=9</td></tr>
+      <tr><td>東京都</td><td class="url">https://app.powerbi.com/view?r=eyJrIjoiNjAxZGU2MDUtZmUzZC00NmUwLWJhMGUtZmY1MDQ3YmViZWVkIiwidCI6ImQwMzAyZmNjLTNlODEtNDljMy04MjM1LWQzMTFhMzY4NGNmYyJ9</td></tr>
+      <tr><td>栃木県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?mid=10qIEI8EW5IVAY82zXyoF8DbWto0aUyc&hl=ja&femb=1&ll=36.64359715202111%2C139.86840226367184&z=9</td></tr>
+      <tr><td>群馬県</td><td class="url">https://pref-gunma.maps.arcgis.com/apps/dashboards/5276d2ebf02a42da8595ed2a51a334c8</td></tr>
+      <tr><td>埼玉県</td><td class="url">https://www.arcgis.com/apps/dashboards/6851a59c5a76496e9c9e3b54b2e67ff9</td></tr>
+      <tr><td>神奈川県</td><td class="url">https://www.pref.kanagawa.jp/documents/15077/kuma_r7_1027.pdf</td></tr>
+      <tr><td>新潟県</td><td class="url">https://www.arcgis.com/apps/dashboards/20b4d06fb3b34776959a4e69c7a8511a</td></tr>
+      <tr><td>長野県</td><td class="url">https://www.pref.nagano.lg.jp/shinrin/sangyo/ringyo/choju/joho/documents/251029-mokugeki.pdf</td></tr>
+      <tr><td>山梨県</td><td class="url">https://www.pref.yamanashi.jp/shizen/kuma2.html</td></tr>
+      <tr><td>富山県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?mid=1chPdwv1B9w0z0VhRWqg6xV2mssU&msa=0&ll=36.39397919270165%2C137.19314599999998&spn=0.944057%2C1.778412&z=9</td></tr>
+      <tr><td>石川県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?mid=1yzG7cN9fx5lPUMyE_Xp5k7r_EXjSz_0&ll=36.770500086954044%2C136.69632606484376&z=9</td></tr>
+      <tr><td>福井県</td><td class="url">https://tsukinowaguma.pref.fukui.lg.jp/</td></tr>
+      <tr><td>静岡県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?mid=1hwFI-xmiB1uYeEpfNetfP15CS9uxo08&ll=35.02159350823549%2C138.38695484671138&z=12</td></tr>
+      <tr><td>愛知県</td><td class="url">https://www.pref.aichi.jp/uploaded/attachment/588410.pdf</td></tr>
+      <tr><td>滋賀県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?mid=1rE5HcSdJnm2gX3iT1FMt0aCVuQ9ArDs&ll=35.15107165524794%2C135.96526679335938&z=10</td></tr>
+      <tr><td>京都府</td><td class="url">https://g-kyoto.gis.pref.kyoto.lg.jp/g-kyoto/ThemeSearch?mid=676&mcl=8010,1,1,1&ac=26000</td></tr>
+      <tr><td>奈良県</td><td class="url">https://www.city.nara.lg.jp/soshiki/110/239851.html</td></tr>
+      <tr><td>和歌山県</td><td class="url">https://www.pref.wakayama.lg.jp/prefg/032600/yasei/kuma_d/fil/kumamap202507-09.pdf</td></tr>
+      <tr><td>島根県・鳥取県</td><td class="url">https://www.google.com/maps/d/u/0/viewer?mid=1g5S_PUzzPjzY5UFp8IBBamT0vOhOGvg&femb=1&ll=35.046082444713896%2C133.09690604999997&z=8</td></tr>
+    </table>
+    <p style="text-align:center; margin-top:1em; color:#777;">最終更新：2025年11月12日</p>
+  </section>
+
+</body>
+</html>
